@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de traslado</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#ffffff;
+}
+
+/* HEADER */
+
+header{
+    background:#ffffff;
+    border-bottom:2px solid #2f9cff;
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 15px;
+    position:relative;
+}
+
+.logo img{
+    height:60px;
+    width:auto;
+}
+
+.soporte{
+    font-size:18px;
+}
+
+.menu{
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* MENÚ DESPLEGABLE */
+
+.dropdown{
+    position:absolute;
+    top:65px;
+    right:10px;
+    width:280px;
+    background:#0f172a;
+    border-radius:8px;
+    overflow:hidden;
+    display:none;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    z-index:100;
+}
+
+.dropdown a{
+    display:block;
+    padding:14px;
+    color:white;
+    text-decoration:none;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.dropdown a:hover{
+    background:#1e293b;
+}
+
+.dropdown.active{
+    display:block;
+}
+
+/* CONTENIDO */
+
+.container{
+    position:relative;
+    padding:20px;
+}
+
+/* MARCA DE AGUA */
+
+.AlmeidaTech{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index:0;
+    opacity:0.09;
+    pointer-events:none;
+}
+
+.AlmeidaTech img{
+    width:600px;
+    height:auto;
+    display:block;
+}
+
+/* TITULOS */
+
+h1{
+    margin-bottom:15px;
+    font-size:40px;
+    font-weight:normal;
+}
+
+h2{
+    margin:20px 0;
+    font-size:28px;
+    font-weight:normal;
+}
+
+/* FORMULARIO */
+
+.formulario{
+    position:relative;
+    z-index:1;
+}
+
+.grupo{
+    display:flex;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.grupo label{
+    width:180px;
+    font-size:22px;
+}
+
+.grupo input,
+.grupo select{
+    width:250px;
+    height:35px;
+    border:1px solid #525252;
+    padding:5px;
+    background:white;
+    box-shadow:0 2px 5px rgba(0,0,0,.2);
+}
+
+.fila{
+    display:flex;
+    gap:60px;
+}
+
+button{
+    margin-top:20px;
+    width:100px;
+    height:40px;
+    cursor:pointer;
+}
+
+/* PANEL */
+
+.panel{
+    width:700px;
+    border:1px solid #ffffff;
+    background:#ececec;
+    padding:10px;
+    margin-top:20px;
+}
+
+.item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.item span{
+    font-size:20px;
+}
+
+.item button{
+    margin:0;
+    width:130px;
+}
+
+.version{
+    position:fixed;
+    bottom:10px;
+    right:20px;
+    color:#b8b8b8;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="logoclinicas.jpg" alt="Hospital de Clínicas">
+    </div>
+
+    <div class="soporte">
+        Gmail de Soporte Técnico ✉ AlmeidaTechUY@gmail.com
+    </div>
+
+    <div class="menu" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <!-- MENÚ DESPLEGABLE -->
+
+    <div class="dropdown" id="dropdown">
+
+        <a href="index.html"> Menú Principal</a>
+
+        <a href="Administracion de documentos.html">
+             Administración de documentos
+        </a>
+
+        <a href="formulariodetraslados.html">
+             Formulario de traslados
+        </a>
+
+        <a href="controldetraslados.html">
+            estión de traslados
+        </a>
+
+    </div>
+
+</header>
+
+<div class="container">
+
+    <div class="AlmeidaTech">
+        <img src="AlmeidaTechPlateado.png" alt="AlmeidaTech">
+    </div>
+
+    <h1>Formulario a rellenar</h1>
+
+    <h2>Datos básicos</h2>
+
+    <form class="formulario">
+
+        <div class="grupo">
+            <label>Número de traslado</label>
+            <input type="text">
+        </div>
+
+        <div class="grupo">
+            <label>Conductor</label>
+            <input type="text">
+        </div>
+
+        <div class="grupo">
+            <label>Enfermero</label>
+            <input type="text">
+        </div>
+
+        <div class="grupo">
+            <label>Origen</label>
+            <input type="text">
+        </div>
+
+        <div class="grupo">
+            <label>Destino</label>
+            <input type="text">
+        </div>
+
+        <h2>Tipo de traslado</h2>
+
+        <div class="grupo">
+            <label>Tipo de traslado</label>
+            <select>
+                <option>Paciente</option>
+                <option>Equipo Médico</option>
+                <option>Muestra Biológica</option>
+            </select>
+        </div>
+
+        <div class="grupo">
+            <label>Vehículo</label>
+            <select>
+                <option>Ambulancia</option>
+                <option>Auto</option>
+            </select>
+        </div>
+
+        <h2>Información del traslado</h2>
+
+        <div class="fila">
+
+            <div>
+
+                <div class="grupo">
+                    <label>Nro. Elemento</label>
+                    <input type="text">
+                </div>
+
+                <div class="grupo">
+                    <label>Tipo de elemento</label>
+                    <input type="text">
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="grupo">
+                    <label>CI del paciente</label>
+                    <input type="text">
+                </div>
+
+            </div>
+
+        </div>
+
+        <button type="submit">
+            Enviar
+        </button>
+
+    </form>
+
+</div>
+
+<div class="version">
+    Pre-Alpha 0.1
+</div>
+
+<script>
+
+function toggleMenu(){
+    document.getElementById("dropdown").classList.toggle("active");
+}
+
+document.addEventListener("click", function(event){
+
+    const menu = document.getElementById("dropdown");
+    const boton = document.querySelector(".menu");
+
+    if(
+        !menu.contains(event.target) &&
+        !boton.contains(event.target)
+    ){
+        menu.classList.remove("active");
+    }
+
+});
+
+</script>
+
+</body>
+</html>

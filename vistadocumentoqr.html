@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceso a Documento</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#ffffff;
+}
+
+
+.soporte{
+    font-size:18px;
+}
+/* HEADER */
+
+header{
+    background:#ffffff;
+    border-bottom:2px solid #2f9cff;
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 15px;
+}
+
+.logo img{
+    height:60px;
+}
+
+/* MARCA DE AGUA */
+
+.AlmeidaTech{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    opacity:0.09;
+    pointer-events:none;
+    z-index:0;
+}
+
+.AlmeidaTech img{
+    width:1000px;
+    height:auto;
+}
+
+/* CONTENIDO CENTRADO */
+
+.container{
+    height:calc(100vh - 65px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    z-index:1;
+}
+
+h1{
+    font-size:38px;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+
+h2{
+    font-size:24px;
+    font-weight:normal;
+    margin-bottom:20px;
+    color:#444;
+}
+
+.panel{
+    background:#ececec;
+    padding:25px;
+    border:1px solid #d0d0d0;
+    border-radius:8px;
+    max-width:500px;
+    width:100%;
+}
+
+.panel p{
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.boton-documento{
+    display:inline-block;
+    padding:12px 22px;
+    background:#2f9cff;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.boton-documento:hover{
+    background:#1f7fd6;
+}
+
+.version{
+    position:fixed;
+    bottom:10px;
+    right:20px;
+    color:#b8b8b8;
+    font-size:16px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="logoclinicas.jpg" alt="Hospital de Clínicas">
+    </div>
+
+     <div class="soporte">
+        Soporte Técnico ✉ AlmeidaTechUY@gmail.com
+    </div>
+
+</header>
+
+<div class="AlmeidaTech">
+    <img src="AlmeidaTechPlateado.png" alt="AlmeidaTech">
+</div>
+
+<div class="container">
+
+    <h1>Vista de Documento</h1>
+
+    <h2>Acceso mediante QR (Simulación)</h2>
+
+    <div class="panel">
+
+        <p>
+            Esta pantalla simula el acceso a un documento mediante QR.
+        </p>
+
+        <a href="listadodedocumentos.html" class="boton-documento">
+            Abrir explorador de documentos
+        </a>
+
+    </div>
+
+</div>
+
+<div class="version">
+    Pre-Alpha 0.1
+</div>
+
+</body>
+</html>
